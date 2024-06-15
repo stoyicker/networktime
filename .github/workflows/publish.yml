@@ -20,7 +20,7 @@ jobs:
           ref: ${{ github.ref_name }}
       - run: .scripts/github/release.sh
   publish-maven-publications:
-    runs-on: macos-14-xlarge
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4.1.6
         with:

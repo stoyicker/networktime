@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - run: exit $(git merge-base --is-ancestor $GITHUB_REF_NAME HEAD)
   update-xcframeworks-and-dispatch-publishing:
-    runs-on: macos-14-xlarge
+    runs-on: macos-14
     needs: [ ensure-tag-is-on-main ]
     permissions:
       actions: write
