@@ -9,7 +9,6 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 
 internal class KotlinMultiplatformLibraryPlugin : Plugin<Project> {
   override fun apply(target: Project) = with(target) {
@@ -65,11 +64,6 @@ internal class KotlinMultiplatformLibraryPlugin : Plugin<Project> {
     configure<KotlinMultiplatformExtension> {
       applyDefaultHierarchyTemplate()
       jvm()
-    }
-    configure<KotlinProjectExtension> {
-      sourceSets.all {
-        languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
-      }
     }
   }
 }
